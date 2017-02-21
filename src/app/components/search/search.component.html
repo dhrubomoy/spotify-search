@@ -1,0 +1,37 @@
+<div class="jumbotron">
+  <h2>SpotifySearch</h2>      
+  <p>Find your favourite artists, albums, songs in the giant collection of Spotify.</p>
+</div>
+
+<form>
+  <div class="form-group">
+    <input class="form-control input-lg"  type="text" placeholder="Search Artists..."
+      [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()">
+  </div>
+</form>
+
+<hr>
+
+<div *ngIf="searchResult">
+  <div *ngFor="let artist of searchResult">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>
+          <a routerLink="/artist/{{artist.id}}">
+            {{artist.name}}
+          </a>
+        </h4>
+      </div>
+      <div class="panel-body">
+        <div *ngIf="artist.genres.length > 0">
+          <strong>Genre:</strong>
+          <span *ngFor="let genre of artist.genres">
+            <div class="btn btn-info btn-xs">
+              {{genre}}
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

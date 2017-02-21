@@ -1,0 +1,13 @@
+.img-artist {
+    width:230px;
+    height:230px;
+}
+
+.album-well {
+    height: 400px;
+}
+
+.img-album {
+    width: auto;
+    height:62%;
+}
